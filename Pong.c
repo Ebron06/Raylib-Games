@@ -16,8 +16,8 @@ int main()
         ClearBackground(RAYWHITE);
 
         int textWidth = MeasureText(message, fontSize);
-        int x = (screenWidth - textWidth) / 2;
-        int y = (screenHeight - fontSize) / 2;
+        int x = (screenWidth - (2 * textWidth) / 2;
+        int y = (screenHeight - (2 *fontSize) / 2;
 
         DrawText(message, x, y, fontSize, DARKBLUE);
         EndDrawing();
