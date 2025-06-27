@@ -1,26 +1,47 @@
 #include "raylib.h"
 
+struct Paddle {
+	int posx;
+	int posy;
+	int width;
+	int height;
+};
+
+const int screenWidth = 800;
+const int screenHeight = 600;
+
+
 int main()
 {
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+    struct Paddle paddle1;
+    struct Paddle paddle2;
 
+    paddle2.posx = screenWidth - 50;
+    paddle2.posy = screenHeight - 400;
+    paddle2.width = 25;
+    paddle2.height = 200;
+
+    paddle1.posx = screenWidth - 775;
+    paddle1.posy = screenHeight - 400;
+    paddle1.width = 25;
+    paddle1.height = 200;
+   
+
+    
     InitWindow(screenWidth, screenHeight, "Pong Game");
     SetTargetFPS(60);
 
-    const char *message = "Hello, Chris";
-    int fontSize = 40;
 
     while(!WindowShouldClose()) {
         BeginDrawing();
         ClearBackground(RAYWHITE);
+	DrawRectangle(paddle1.posx, paddle1.posy, paddle1.width, paddle1.height, RED);
+	DrawRectangle(paddle2.posx, paddle2.posy, paddle2.width, paddle2.height, SKYBLUE);
+	
 
-        int textWidth = MeasureText(message, fontSize);
-        int x = (screenWidth - (2 * textWidth) / 2;
-        int y = (screenHeight - (2 *fontSize) / 2;
-
-        DrawText(message, x, y, fontSize, DARKBLUE);
         EndDrawing();
+
+
 
     }
     CloseWindow();

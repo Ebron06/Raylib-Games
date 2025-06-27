@@ -4,7 +4,7 @@
 CC = gcc
 
 # Source file
-SRC ?= main.c
+SRC = Pong.c
 
 # Output binary name
 OUT = $(basename $(SRC))
